@@ -1,0 +1,286 @@
+:root {
+  --base: #1e1e2e;
+  --surface: #313244;
+  --text: #cdd6f4;
+  --mauve: #cba6f7;
+  --lavender: #b4befe;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--base);
+  padding-top: 120px;
+  overflow-x: hidden;
+}
+
+header {
+  background: var(--surface);
+  padding: 0.5rem;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 2px solid var(--mauve);
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--mauve);
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: var(--mauve);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  position: relative;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--lavender);
+  transition: width 0.3s;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+section,
+footer {
+  background: var(--surface);
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #45475a;
+}
+
+h2 {
+  color: var(--mauve);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #45475a;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 1px solid #585b70;
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  transition: transform 0.3s, filter 0.3s;
+  object-fit: cover;
+  display: block;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(203, 166, 247, 0.2);
+}
+
+.card:hover .card-image {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.card-title {
+  display: block;
+  padding: 1rem 1rem 0.5rem;
+  font-weight: bold;
+  color: var(--mauve);
+}
+
+.card p {
+  padding: 0.5rem 1rem 1rem;
+  font-size: 0.9rem;
+}
+
+.tips-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.tip {
+  background: #45475a;
+  padding: 1.5rem;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.tip:hover {
+  transform: translateX(5px);
+  background: #585b70;
+}
+
+.tip h3 {
+  color: var(--mauve);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.highlight {
+  font-weight: bold;
+  color: var(--lavender);
+}
+
+.tip-details {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--lavender);
+}
+
+.tip:hover .tip-details {
+  opacity: 1;
+  visibility: visible;
+  max-height: 50px;
+}
+
+.media-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.media-item {
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.media-item h3 {
+  background: var(--mauve);
+  color: var(--base);
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.media-item iframe {
+  display: block;
+  background: #45475a;
+}
+
+.media-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(203, 166, 247, 0.2);
+}
+
+footer {
+  text-align: center;
+}
+
+footer h2 {
+  margin-bottom: 1rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
+
+.social-links {
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.social-link {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: var(--mauve);
+  color: var(--base);
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.social-link:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  nav {
+    gap: 1rem;
+  }
+  section,
+  footer {
+    margin: 1rem;
+  }
+  .cards-container,
+  .media-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+  nav a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+  }
+  section,
+  footer {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+}
