@@ -191,7 +191,7 @@ h2 {
 
 .media-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
 
@@ -212,6 +212,8 @@ h2 {
 .media-item iframe {
   display: block;
   background: #45475a;
+  width: 100%;
+  height: 600px;
 }
 
 .media-item:hover {
