@@ -69,11 +69,7 @@ nav a {
 }
 
 nav a::before {
-  content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
   height: 2px;
   background: var(--lavender);
   transition: width 0.3s;
@@ -101,19 +97,17 @@ h2 {
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
 .card {
   background: #45475a;
   border-radius: 8px;
-  overflow: hidden;
   transition: all 0.3s;
   border: 1px solid #585b70;
 }
 
-.card-image {
+img {
   width: 100%;
   height: 180px;
   transition: transform 0.3s, filter 0.3s;
@@ -161,7 +155,7 @@ h2 {
   background: #585b70;
 }
 
-.tip h3 {
+.tip {
   color: var(--mauve);
   margin-bottom: 0.5rem;
   font-size: 1rem;
@@ -201,7 +195,7 @@ h2 {
   transition: all 0.3s;
 }
 
-.media-item h3 {
+.media-item {
   background: var(--mauve);
   color: var(--base);
   padding: 1rem;
@@ -209,7 +203,7 @@ h2 {
   font-size: 1rem;
 }
 
-.media-item iframe {
+iframe {
   display: block;
   background: #45475a;
   width: 100%;
@@ -225,19 +219,6 @@ footer {
   text-align: center;
 }
 
-footer h2 {
-  margin-bottom: 1rem;
-}
-
-footer p {
-  margin: 0.5rem 0;
-}
-
-.social-links {
-  margin: 1.5rem 0;
-  padding: 1rem;
-}
-
 .social-link {
   display: inline-block;
   margin: 0.5rem;
@@ -246,43 +227,10 @@ footer p {
   color: var(--base);
   text-decoration: none;
   border-radius: 20px;
-  font-weight: 600;
   transition: all 0.3s;
 }
 
 .social-link:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 1.5rem;
-  }
-  nav {
-    gap: 1rem;
-  }
-  section,
-  footer {
-    margin: 1rem;
-  }
-  .cards-container,
-  .media-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.2rem;
-  }
-  nav a {
-    font-size: 0.85rem;
-    padding: 0.3rem 0.6rem;
-  }
-  section,
-  footer {
-    margin: 0.5rem;
-    padding: 1rem;
-  }
 }
