@@ -221,9 +221,8 @@ footer {
 }
 
 .social-link {
-  display: inline-block;
   margin: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem;
   background: var(--mauve);
   color: var(--base);
   text-decoration: none;
